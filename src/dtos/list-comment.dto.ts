@@ -1,11 +1,6 @@
 import { Locale } from '../shared/shared.types'
 
-export class CreateCommentDto {
+export class ListCommentDto {
   productId: number
-
-  userId: number
-
-  comment: string
-
   locale: Locale
 }

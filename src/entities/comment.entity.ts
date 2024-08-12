@@ -10,6 +10,7 @@ import {
 } from 'typeorm'
 import { Product } from './product.entity'
 import { User } from './user.entity'
+import { Locale } from '../shared/shared.types'
 
 @Entity()
 export class Comment {
@@ -23,6 +24,9 @@ export class Comment {
   @ManyToOne(() => User, (user) => user.id, { onDelete: 'CASCADE', nullable: false })
   @JoinColumn({ name: 'user_id' })
   user: User
+
+  @Column({ type: 'enum', enum: Locale })
+  locale: Locale
 
   @Column()
   content: string
