@@ -10,6 +10,7 @@ import { Product } from './entities/product.entity'
 import { ProductPricing } from './entities/product-pricing.entity'
 import { Comment } from './entities/comment.entity'
 import { User } from './entities/user.entity'
+import { AppTransformer } from './app.transformer'
 
 @Module({
   imports: [
@@ -34,6 +35,6 @@ import { User } from './entities/user.entity'
     TypeOrmModule.forFeature([Product, Category, Comment, ProductPricing, User]),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppTransformer],
 })
 export class AppModule {}
