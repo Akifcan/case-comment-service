@@ -5,6 +5,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config'
 import configuration from './config/configuration'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { DbConfig } from './config/config.interface'
+import { Category } from './entities/category.entity'
+import { Product } from './entities/product.entity'
+import { ProductPricing } from './entities/product-pricing.entity'
+import { Comment } from './entities/comment.entity'
+import { User } from './entities/user.entity'
 
 @Module({
   imports: [
@@ -26,6 +31,7 @@ import { DbConfig } from './config/config.interface'
         }
       },
     }),
+    TypeOrmModule.forFeature([Product, Category, Comment, ProductPricing, User]),
   ],
   controllers: [AppController],
   providers: [AppService],

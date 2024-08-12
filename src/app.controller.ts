@@ -1,13 +1,14 @@
 import { Controller, Get } from '@nestjs/common'
 import { AppService } from './app.service'
 import { MessagePattern } from '@nestjs/microservices'
+import { CreateCommentDto } from './dtos/create-comment.dto'
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern({ cmd: 'create-comment' })
-  getHello(): string {
-    return this.appService.getHello()
+  @MessagePattern({ cmd: 'list-comment' })
+  listComment(createCommentDto: CreateCommentDto) {
+    return createCommentDto
   }
 }
