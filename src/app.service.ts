@@ -5,10 +5,12 @@ import { Repository } from 'typeorm'
 import { CreateCommentDto } from './dtos/create-comment.dto'
 import { ListCommentDto } from './dtos/list-comment.dto'
 import { AppTransformer } from './app.transformer'
+import { Product } from './entities/product.entity'
 
 @Injectable()
 export class AppService {
   @InjectRepository(Comment) commentRepository: Repository<Comment>
+  @InjectRepository(Product) productRepository: Repository<Product>
   @Inject() appTransformer: AppTransformer
 
   async listComment(listCommentDto: ListCommentDto) {
