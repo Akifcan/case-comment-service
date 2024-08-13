@@ -21,3 +21,13 @@ export interface RedisConfig {
   port: number
   ttl: number
 }
+
+export interface ThrottlerConfig {
+  ttl: number
+  limit: number
+}
+
+export interface CommentServiceConfig {
+  host: string
+  port: number
+}

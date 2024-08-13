@@ -27,7 +27,7 @@ import { AppTransformer } from './app.transformer'
           username: dbConfig.user,
           password: dbConfig.password,
           database: dbConfig.name,
-          synchronize: true,
+          synchronize: false,
           autoLoadEntities: true,
         }
       },
