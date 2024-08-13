@@ -18,6 +18,7 @@ export class AppService {
       select: { id: true, content: true, createdAt: true, user: { id: true, name: true } },
       relations: ['user'],
       where: { locale: listCommentDto.locale, product: { id: listCommentDto.productId } },
+      order: { createdAt: -1 },
     })
 
     return {
